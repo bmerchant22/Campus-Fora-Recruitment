@@ -15,7 +15,6 @@ func (srv *Server) AddPost(c echo.Context) error {
 	// Connected to mysql server
 	db, err := sql.Open("mysql", "root:BM@mysql53@tcp(127.0.0.1:3306)/fora")
 	if err != nil {
-		//zap.S().Errorf("Error while connecting to mysql: %v", err)
 		panic(err)
 	}
 	defer db.Close()
@@ -23,11 +22,9 @@ func (srv *Server) AddPost(c echo.Context) error {
 	// Inserted the entered form value into mysql table
 	insert, err := db.Query("INSERT INTO `newposts` VALUES(?, ?)", username, post)
 	if err != nil {
-		//zap.S().Errorf("Error while inserting data in newposts : %v", err)
 		panic(err)
 	}
 	defer insert.Close()
-	//zap.S().Infof("Data inserted successfully")
 	fmt.Println("Data inserted successfully")
 
 	return c.String(http.StatusOK, "User added a post successfully")
