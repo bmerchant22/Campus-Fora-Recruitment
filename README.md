@@ -5,3 +5,4 @@ The following packages are being used in the code:
 * database/sql : Package sql provides a generic interface around SQL databases. 
 
 A Go-MySQL-Driver is being used in this task.
+I have used local database on MySql server.
