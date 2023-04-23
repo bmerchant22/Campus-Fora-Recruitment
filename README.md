@@ -6,3 +6,7 @@ The following packages are being used in the code:
 
 A Go-MySQL-Driver is being used in this task.
 I have used local database on MySql server.
+
+##Testing continues
+* git merge
+* git pull
